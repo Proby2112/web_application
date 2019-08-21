@@ -11,8 +11,9 @@ namespace WebApplication.DL.Repositories
         where TEntity : class, IBaseEntity<TKey>
         where TKey : IEquatable<TKey>, IComparable<TKey>
     {
-        protected IGenericRepository<TEntity, TKey> _repository;
+        protected readonly IGenericRepository<TEntity, TKey> _repository;
 
+        public string TableName => _repository.TableName();
 
         public BaseRepository(IGenericRepository<TEntity, TKey> repository)
         {

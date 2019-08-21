@@ -23,5 +23,7 @@ namespace WebApplication.Core.Interfaces
         int Delete(TEntity entity);
 
         int SaveChanges();
+
+        string TableName();
     }
 }

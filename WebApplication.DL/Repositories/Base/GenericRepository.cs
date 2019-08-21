@@ -83,5 +83,13 @@ namespace WebApplication.DL.Repositories
         public virtual int Insert(TEntity entity) => Insert(new List<TEntity>() { entity });
         public virtual int Update(TEntity entity) => Update(new List<TEntity>() { entity });
         public virtual int Delete(TEntity entity) => Delete(new List<TEntity>() { entity });
+
+        public string TableName()
+        {
+            var type = _context.Model.FindEntityType(typeof(TEntity)).Relational();
+            var tableName = type.TableName;
+
+            return tableName;
+        }
     }
 }

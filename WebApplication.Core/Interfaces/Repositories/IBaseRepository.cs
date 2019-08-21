@@ -8,6 +8,8 @@ namespace WebApplication.Core.Interfaces
         where TEntity : class, IBaseEntity<TKey>
         where TKey : IEquatable<TKey>, IComparable<TKey>
     {
+        string TableName { get; }
+
         Task<TEntity> Get(TKey id);
         Task<IEnumerable<TEntity>> GetAll();
 
@@ -16,5 +18,6 @@ namespace WebApplication.Core.Interfaces
         Task Remove(TKey id);
 
         Task Put(TKey id, TEntity item);
+
     }
 }

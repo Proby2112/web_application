@@ -11,4 +11,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers\BL\" />
+    <Folder Include="Helpers\Core\" />
+    <Folder Include="Helpers\DL\" />
+  </ItemGroup>
+
 </Project>

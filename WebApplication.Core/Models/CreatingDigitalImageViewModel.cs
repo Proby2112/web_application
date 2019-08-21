@@ -16,5 +16,8 @@ namespace WebApplication.Core.Models
     public class CreatingDigitalImageGetMinViewModel : CreatingDigitalImageBaseViewModel
     {
     }
+    public class CreatingDigitalImageAddViewModel : CreatingDigitalImageBaseViewModel
+    {
+    }
 
 }

@@ -13,5 +13,7 @@ namespace WebApplication.Core.Models
     public class FinalProductGetMinViewModel : FinalProductBaseViewModel
     {
     }
-
+    public class FinalProductAddViewModel : FinalProductBaseViewModel
+    {
+    }
 }
