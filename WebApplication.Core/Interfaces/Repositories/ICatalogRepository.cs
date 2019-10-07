@@ -2,7 +2,7 @@
 
 namespace WebApplication.Core.Interfaces.Repositories
 {
-    public interface IGraphicProductRepository : IBaseRepository<GraphicProduct, string>
+    public interface ICatalogRepository : IBaseRepository<Catalog, string>
     {
     }
 }

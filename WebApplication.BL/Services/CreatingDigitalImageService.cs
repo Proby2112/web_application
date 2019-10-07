@@ -6,9 +6,9 @@ using WebApplication.Core.Models;
 
 namespace WebApplication.BL.Services
 {
-    public class CreatingDigitalImageService : BaseService<CreatingDigitalImageAddViewModel, CreatingDigitalImageGetFullViewModel, CreatingDigitalImage, string>, ICreatingDigitalImageService
+    public class CatalogService : BaseService<CatalogAddViewModel, CatalogGetFullViewModel, Catalog, string>, ICatalogService
     {
-        public CreatingDigitalImageService(ICreatingDigitalImageRepository repository, IDataAdapter dataAdapter) : base(repository, dataAdapter) { }
+        public CatalogService(ICatalogRepository repository, IDataAdapter dataAdapter) : base(repository, dataAdapter) { }
     }
 
 }

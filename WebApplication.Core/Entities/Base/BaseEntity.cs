@@ -7,16 +7,13 @@ namespace WebApplication.Core.Entities
 {
     public class BaseEntity<TKey> : IBaseEntity<TKey> where TKey : IEquatable<TKey>, IComparable<TKey>
     {
-        [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual TKey Id { get; set; }
-
         public virtual DateTime Created { get; set; }
-        public virtual DateTime Updated { get; set; }
 
         public BaseEntity()
         {
             Created = DateTime.UtcNow;
-            Updated = Created;
         }
 
         public override int GetHashCode()

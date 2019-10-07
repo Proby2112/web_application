@@ -6,7 +6,7 @@ using WebApplication.Core.Models;
 
 namespace WebApplication.Core.Interfaces.Services
 {
-    public interface ICreatingDigitalImageService : IBaseService<CreatingDigitalImageAddViewModel, CreatingDigitalImageGetFullViewModel, CreatingDigitalImage, string>
+    public interface ICatalogService : IBaseService<CatalogAddViewModel, CatalogGetFullViewModel, Catalog, string>
     {
     }
 }
