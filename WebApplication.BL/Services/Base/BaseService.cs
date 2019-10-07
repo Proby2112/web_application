@@ -25,37 +25,37 @@ namespace WebApplication.BL.Services
         public virtual async Task<TModel> AddAsync(TModelToAdd model)
         {
             var entity = _dataAdapter.Parse<TModelToAdd, TEntity>(model);
-            await _repository.Add(entity);
+            await _repository.AddAsync(entity);
 
-            entity = await _repository.Get(entity.Id);
+            entity = await _repository.GetAsync(entity.Id);
             var modelResult = _dataAdapter.Parse<TEntity, TModel>(entity);
 
             return modelResult;
         }
 
-        public virtual async Task<List<TModel>> GetAll()
+        public virtual async Task<List<TModel>> GetAllAsync()
         {
-            var entities = await _repository.GetAll();
+            var entities = await _repository.GetAllAsync();
             return _dataAdapter.Parse<TEntity, TModel>(entities).ToList();
         }
 
-        public virtual async Task<TModel> Get(TKey id)
+        public virtual async Task<TModel> GetAsync(TKey id)
         {
-            var entity = await _repository.Get(id);
+            var entity = await _repository.GetAsync(id);
             return _dataAdapter.Parse<TEntity, TModel>(entity);
         }
 
-        public virtual async Task Remove(TKey id)
+        public virtual async Task RemoveAsync(TKey id)
         {
-            await _repository.Remove(id);
+            await _repository.RemoveAsync(id);
         }
 
-        public virtual async Task<TModel> Update(TKey id, TModelToAdd value)
+        public virtual async Task<TModel> UpdateAsync(TKey id, TModelToAdd value)
         {
             var entity = _dataAdapter.Parse<TModelToAdd, TEntity>(value);
-            await _repository.Put(id, entity);
+            await _repository.PutAsync(id, entity);
 
-            entity = await _repository.Get(entity.Id);
+            entity = await _repository.GetAsync(entity.Id);
 
             return _dataAdapter.Parse<TEntity, TModel>(entity);
         }

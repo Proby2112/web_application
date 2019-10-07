@@ -20,10 +20,7 @@ namespace WebApplication.BL.Managers
 
         public IEnumerable<To> Parse<From, To>(IEnumerable<From> models) => models.Select(Parse<From, To>).ToList();
     }
-}
 
-namespace HeroesAndDragons.Managers
-{
     class MappingProfiles : Profile
     {
         public MappingProfiles()

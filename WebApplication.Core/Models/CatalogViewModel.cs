@@ -6,8 +6,7 @@ namespace WebApplication.Core.Models
     public abstract class CatalogBaseViewModel : BaseModel<string>
     {
         public string Name { get; set; }
-        public string HeadCatalogId { get; set; }
-
+        public string FriendlyUrl { get; set; }
     }
     public class CatalogGetFullViewModel : CatalogBaseViewModel
     {

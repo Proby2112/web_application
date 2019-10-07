@@ -1,0 +1,13 @@
+﻿@model List<WebApplication.Core.Models.CatalogGetFullViewModel>
+@{
+}
+
+    <h2>All Catalogs</h2>
+    <ul>
+    @foreach(var item in Model)
+    {
+        <li>
+            <a asp-controller="Home" asp-action="Catalogs" asp-route-friendlyUrl="@item.FriendlyUrl">@item.Name</a>
+        </li>
+    }
+    </ul>

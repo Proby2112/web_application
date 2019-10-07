@@ -25,9 +25,9 @@ namespace WebApplication.Controllers
         {
             try
             {
-                var models = await _service.GetAll();
+                var models = await _service.GetAllAsync();
 
-                return Ok(models);
+                return View(models);
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace WebApplication.Controllers
         {
             try
             {
-                var model = await _service.Get(id);
+                var model = await _service.GetAsync(id);
 
                 return Ok(model);
             }
@@ -73,7 +73,7 @@ namespace WebApplication.Controllers
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
-                var modelResult = await _service.Update(id, value);
+                var modelResult = await _service.UpdateAsync(id, value);
 
                 return Ok(modelResult);
             }
@@ -87,7 +87,7 @@ namespace WebApplication.Controllers
         {
             try
             {
-                await _service.Remove(id);
+                await _service.RemoveAsync(id);
 
                 return Ok("Model deleted");
             }

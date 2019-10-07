@@ -10,14 +10,14 @@ namespace WebApplication.Core.Interfaces
     {
         string TableName { get; }
 
-        Task<TEntity> Get(TKey id);
-        Task<IEnumerable<TEntity>> GetAll();
+        Task<TEntity> GetAsync(TKey id);
+        Task<IEnumerable<TEntity>> GetAllAsync();
 
-        Task Add(TEntity item);
-        Task Remove(TEntity entity);
-        Task Remove(TKey id);
+        Task AddAsync(TEntity item);
+        Task RemoveAsync(TEntity entity);
+        Task RemoveAsync(TKey id);
 
-        Task Put(TKey id, TEntity item);
+        Task PutAsync(TKey id, TEntity item);
 
     }
 }

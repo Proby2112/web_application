@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Helpers\BL\" />
-    <Folder Include="Helpers\Core\" />
     <Folder Include="Helpers\DL\" />
   </ItemGroup>
 

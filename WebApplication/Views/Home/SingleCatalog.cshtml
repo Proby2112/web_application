@@ -1,0 +1,22 @@
+﻿@model WebApplication.Core.Models.CatalogGetFullViewModel
+@{
+}
+
+<h2>@Model.Name</h2>
+
+@if(Model.HeadCatalog != null)
+{ 
+    <h6 class="mb-1 mt-3">Head catalog:</h6>
+        <a asp-controller="Home" asp-action="Catalogs" asp-route-friendlyUrl="@Model.HeadCatalog.FriendlyUrl">@Model.HeadCatalog.Name</a>
+}
+
+<h6 class="mt-3 mb-1">Nested catalogs:</h6>
+
+<ul>
+    @foreach (var item in Model.NestedCatalogs)
+    {
+        <li>
+            <a asp-controller="Home" asp-action="Catalogs" asp-route-friendlyUrl="@item.FriendlyUrl">@item.Name</a>
+        </li>
+    }
+</ul>

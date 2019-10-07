@@ -10,14 +10,14 @@ namespace WebApplication.Core.Interfaces
         where TEntity : class, IBaseEntity<TKey>
         where TKey : IEquatable<TKey>, IComparable<TKey>
     {
-        Task<List<TModel>> GetAll();
+        Task<List<TModel>> GetAllAsync();
 
-        Task<TModel> Get(TKey id);
+        Task<TModel> GetAsync(TKey id);
 
         Task<TModel> AddAsync(TModelToAdd model);
 
-        Task<TModel> Update(TKey id, TModelToAdd model);
+        Task<TModel> UpdateAsync(TKey id, TModelToAdd model);
 
-        Task Remove(TKey id);
+        Task RemoveAsync(TKey id);
     }
 }

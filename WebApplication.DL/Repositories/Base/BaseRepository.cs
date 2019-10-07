@@ -20,7 +20,7 @@ namespace WebApplication.DL.Repositories
             _repository = repository;
         }
 
-        public virtual Task Add(TEntity item)
+        public virtual Task AddAsync(TEntity item)
         {
             item.SetId();
 
@@ -28,31 +28,31 @@ namespace WebApplication.DL.Repositories
             return Task.FromResult("Ok");
         }
 
-        public virtual Task<TEntity> Get(TKey id)
+        public virtual Task<TEntity> GetAsync(TKey id)
         {
             var res = _repository.Get(id);
             return Task.FromResult(res);
         }
 
-        public virtual Task<IEnumerable<TEntity>> GetAll()
+        public virtual Task<IEnumerable<TEntity>> GetAllAsync()
         {
             var res = _repository.Get();
             return Task.FromResult(res);
         }
 
-        public virtual Task Put(TKey id, TEntity item)
+        public virtual Task PutAsync(TKey id, TEntity item)
         {
             _repository.Update(item);
             return Task.FromResult("Ok");
         }
 
-        public virtual Task Remove(TEntity entity)
+        public virtual Task RemoveAsync(TEntity entity)
         {
             _repository.Delete(entity);
             return Task.FromResult("Ok");
         }
 
-        public Task Remove(TKey id)
+        public Task RemoveAsync(TKey id)
         {
             var entity = _repository.Get(id);
 
